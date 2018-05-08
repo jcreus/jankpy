@@ -12,8 +12,9 @@ Some examples that this library tries to solve:
 ```python
 from J import * # only exports single letter, uppercase symbols
 
-(F(fn)/4) @ range(100) # Parallelizes fnover 4 CPUs and maps it over the list range(100)
-(F(f1, f2)/0) @ [a, b, ...] # Computes [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
+F(float) @ ['3.14', '2.71'] # returns [3.14, 2.71]
+(F(fn)/4) @ range(100) # Parallelizes fn over 4 CPUs and maps it over the list range(100)
+(F(f1, f2)/0) @ [a, b, ...] # Returns [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
 ```
  - Easier plotting library.
 ```python
