@@ -12,18 +12,35 @@ Some examples that this library tries to solve:
 ```python
 from J import * # only exports single letter, uppercase symbols
 
-(F(complicated_function)/4) @ range(100) # Parallelizes complicated_function over 4 CPUs and maps int over the list range(100)
-(F(f1, f2)/0) @ range(100) # Computes [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
+(F(fn)/4) @ range(100) # Parallelizes fnover 4 CPUs and maps it over the list range(100)
+(F(f1, f2)/0) @ [a, b, ...] # Computes [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
 ```
  - Easier plotting library.
 ```python
-# Interface still to be finalized, pending remembering how Python precedenc eworks
+# Interface still to be finalized, pending remembering how Python precedence works,
+# and more messed up notation that could be abused.
 
 (P.xy(x, y) % "plot title" & P.xly(x, y) % "semilogy plot")
-
+P.legend()
+P.colors('rainbow')
 P.plot()
-
 P.tex('figure.pdf') # Exports in nice LaTeX
+
+# -----
+
+with P as fig1:
+    fig1.xy(x, y)
+with P as fig2:
+    fig2.xy(x, y)
+with P as fig3:
+    fig3.xy(x, y)
+with P as fig4:
+    fig4.xy(x, y)
+
+(fig1 | fig2) % (fig3 | fig4)
+# Subplots that look like
+# fig1  fig2
+# fig3  fig4
 ```
  - Timing utilities.
 ```python
@@ -40,6 +57,6 @@ print(t) # Prints time spent in seconds
  - T: timing utilities
 
 ### To do
- - P: plotting utilities.
+ - P: plotting utilities that overload Python operations a little too much.
  - W: Joseph "I hear you like 2π and conflicting array indexing conventions" Fourier utilities.
  - X: dummy variable, e.g. aspirationally `(float@X.lstrip().rstrip().split(',')) @ open('file').readlines()` would be a CSV reader; this might not be actually possible, but in that spirit.

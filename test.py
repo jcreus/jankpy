@@ -2,7 +2,11 @@ from jank import *
 
 import time
 
-T(time.sleep, 2)
+v, t = T.vt(lambda x: x**4, 1024)
+print(v)
+print(t)
+
+T(time.sleep, 0.314)
 
 T('x=0\nfor i in range(1000): x += i*i')
 
