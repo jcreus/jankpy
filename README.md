@@ -18,6 +18,7 @@ F(f1, f2)/0 @ [a, b, ...] # Returns [f1(f2(a)), f1(f2(b)), ...] using as many co
 
 # Not implemented yet
 F(lambda x: x > 5) % [1, 7, 2, 6] # returns [7, 6]
+F(X > 7 or X % 2 == 0) % lst # using X syntax, see below
 # Some similarly dumb syntax for reduce and others
 ```
  - Easier plotting library.
