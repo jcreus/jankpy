@@ -15,6 +15,10 @@ from jank import * # only exports single letter, uppercase symbols
 F(float) @ ['3.14', '2.71'] # returns [3.14, 2.71]
 F(fn)/4 @ range(100) # Parallelizes fn over 4 CPUs and maps it over the list range(100)
 F(f1, f2)/0 @ [a, b, ...] # Returns [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
+
+# Not implemented yet
+F(lambda x: x > 5) % [1, 7, 2, 6] # returns [7, 6]
+# Some similarly dumb syntax for reduce and others
 ```
  - Easier plotting library.
 ```python
