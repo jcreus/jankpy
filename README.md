@@ -1,6 +1,6 @@
 # J - Janky Python Utilities
 
-*_Tread carefully: This is an abomination_*
+*_Tread carefully: This is an abomination. Also, it's nowhere close to complete._*
 
 ## Purpose
 Some language constructs are common enough in quick Python scripts that the code duplication is time-consuming and frustrating. Yeah, sure, _proper_ code does not have these problems, with abstract factories of token tokens or encapsulated™-reactive docstring-commented modules, but sometimes research code need not be _proper_ code, and if trying out dozens of experiments, researcher time is often way more valuable.
