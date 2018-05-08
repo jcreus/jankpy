@@ -1,6 +1,6 @@
 # J - Janky Python Utilities
 
-*_Tread carefully: This is an abomination. Also, it's nowhere close to complete._*
+*_Tread carefully: This is an abomination. Also, it's nowhere close to complete, and doesn't have setup utilities yet._*
 
 ## Purpose
 Some language constructs are common enough in quick Python scripts that the code duplication is time-consuming and frustrating. Yeah, sure, _proper_ code does not have these problems, with abstract factories of token tokens or encapsulated™-reactive docstring-commented modules, but sometimes research code need not be _proper_ code, and if trying out dozens of experiments, researcher time is often way more valuable.
@@ -10,11 +10,11 @@ This library aims to provide a set of sketchy functions that cover common functi
 Some examples that this library tries to solve:
  - Easier interface for maps and functional constructs, for times when finishing statements with `))))))` seems excessive. An easier parallelization interface makes you ever so slightly more likely to parallelize your code.
 ```python
-from J import * # only exports single letter, uppercase symbols
+from jank import * # only exports single letter, uppercase symbols
 
 F(float) @ ['3.14', '2.71'] # returns [3.14, 2.71]
-(F(fn)/4) @ range(100) # Parallelizes fn over 4 CPUs and maps it over the list range(100)
-(F(f1, f2)/0) @ [a, b, ...] # Returns [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
+F(fn)/4 @ range(100) # Parallelizes fn over 4 CPUs and maps it over the list range(100)
+F(f1, f2)/0 @ [a, b, ...] # Returns [f1(f2(a)), f1(f2(b)), ...] using as many cores as possible (sorry)
 ```
  - Easier plotting library.
 ```python
