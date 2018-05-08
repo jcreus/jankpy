@@ -26,6 +26,13 @@ P.plot()
 P.tex('figure.pdf') # Exports in nice LaTeX
 ```
  - Timing utilities.
+```python
+T(time.sleep, 0.314) # Prints "Took 314.35 ms"
+T(time.sleep, 666) # Prints "Took 11 min 6 s"
+v, t = T.vt(lambda x: x**4, 1024)
+print(v) # Prints some big number
+print(t) # Prints time spent in seconds
+```
 
 ## Status
 ### In progress

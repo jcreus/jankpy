@@ -43,9 +43,9 @@ class T:
 
     @staticmethod
     def display(t):
-        if t < 1e-6:
+        if t < 1e-3:
             s = "%.2f us" % (t*1e6)
-        elif t < 1e-3:
+        elif t < 1:
             s = "%.2f ms" % (t*1e3)
         elif t < 60:
             s  = "%.2f s" % t
@@ -60,6 +60,12 @@ class T:
     def t(v, *args, **kwargs):
         _, t = T.vt(v, *args, **kwargs)
         return t
+
+    @staticmethod
+    def v(v, *args, **kwargs):
+        v, t = T.vt(v, *args, **kwargs)
+        T.display(t)
+        return v
 
     @staticmethod
     def vt(v, *args, **kwargs):
